@@ -3,170 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Black Copy | Solutions Made Simple</title>
+    <title>The Black Copy</title>
     <style>
-        /* Reset and base */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { background-color: #0a0a0a; color: #fff; line-height: 1.6; }
-
-        /* Navbar */
-        nav {
-            position: fixed; top: 0; width: 100%; background: #1a1a1a; display: flex; justify-content: space-between; align-items: center; padding: 1rem 3rem; z-index: 1000;
+        /* Global Styles */
+        html {
+            scroll-behavior: smooth;
         }
-        nav a { color: #fff; text-decoration: none; margin-left: 2rem; transition: color 0.3s; }
-        nav a:hover { color: #c1121f; }
-
-        /* Hero Section */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #0a0a0a; }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #c1121f; }
-        .hero p { font-size: 1.5rem; max-width: 600px; margin-bottom: 2rem; }
-        .hero a.button { background: #c1121f; color: #fff; padding: 0.8rem 2rem; text-decoration: none; border-radius: 5px; transition: background 0.3s; }
-        .hero a.button:hover { background: #ff1c2e; }
-
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #f5f5f5;
+        }
+        a {
+            text-decoration: none;
+            color: #e63946;
+        }
+        a:hover {
+            color: #ff6b6b;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            background-color: #000;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        nav ul li a {
+            font-weight: bold;
+            color: #f5f5f5;
+        }
+        nav ul li a:hover {
+            color: #e63946;
+        }
+        section {
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        h1, h2 {
+            color: #e63946;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000 url('https://images.unsplash.com/photo-1572370550504-7f91d1fef1c8?fit=crop&w=1400&q=80') no-repeat center center/cover;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
         /* Sections */
-        section { padding: 5rem 3rem; }
-        section h2 { font-size: 2.5rem; margin-bottom: 2rem; text-align: center; color: #c1121f; }
-
-        /* Services */
-        .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-        .service-box { background: #1a1a1a; padding: 2rem; border-radius: 8px; width: 250px; transition: transform 0.3s, background 0.3s; cursor: pointer; }
-        .service-box:hover { transform: translateY(-5px); background: #c1121f; color: #fff; }
-        .service-box h3 { margin-bottom: 1rem; }
-        .service-box p { font-size: 0.95rem; }
-
-        /* Portfolio */
-        .portfolio { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-        .portfolio-item { background: #1a1a1a; padding: 1rem; border-radius: 8px; width: 300px; transition: transform 0.3s; cursor: pointer; }
-        .portfolio-item:hover { transform: scale(1.05); }
-
-        /* Contact */
-        .contact-form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 1rem; }
-        .contact-form input, .contact-form textarea { padding: 0.8rem; border: none; border-radius: 5px; }
-        .contact-form button { background: #c1121f; color: #fff; padding: 0.8rem; border: none; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
-        .contact-form button:hover { background: #ff1c2e; }
-
-        /* Footer */
-        footer { background: #1a1a1a; text-align: center; padding: 2rem; margin-top: 3rem; font-size: 0.9rem; }
-        footer a { color: #c1121f; text-decoration: none; }
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        section p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        ul li {
+            margin: 0.5rem 0;
+        }
+        /* Portfolio Hover Boxes */
+        .portfolio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .portfolio-item {
+            background-color: #111;
+            padding: 20px;
+            flex: 1 1 calc(33% - 40px);
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            background-color: #1a1a1a;
+        }
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input, textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+        }
+        button {
+            padding: 12px;
+            background-color: #e63946;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff6b6b;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #777;
+        }
+        @media (max-width: 768px) {
+            .portfolio-item {
+                flex: 1 1 100%;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav>
-    <div class="logo"><a href="#hero">The Black Copy</a></div>
-    <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <h1>The Black Copy</h1>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#behind-scenes">Behind the Scenes</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- Hero -->
-<section class="hero" id="hero">
-    <h1>The Black Copy</h1>
-    <p>For Swans, By Swans. Solutions Made Simple. Elevating your projects with strategy, writing, and actionable insights.</p>
-    <a class="button" href="#contact">Get in Touch</a>
-</section>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <h1>Welcome to The Black Copy</h1>
+        <p>For Swans, By Swans. Solutions Made Simple. Crafting strategy, content, and results that make impact.</p>
+    </section>
 
-<!-- About Section -->
-<section id="about">
-    <h2>About The Black Copy</h2>
-    <p>
-        The Black Copy is a strategic partner for students, professionals, nonprofits, and political campaigns alike. 
-        We provide clear, actionable solutions in copywriting, research, data entry, business planning, and revenue generation. 
-        Our goal is simple: turn ideas into results efficiently, accurately, and creatively. Every project is handled with precision, 
-        confidentiality, and a focus on producing tangible impact.
-    </p>
-</section>
-    
-<!-- Services -->
-<section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="service-box">
-            <h3>Copywriting</h3>
-            <p>Business plans, grant proposals, pitch decks, and PR content crafted to perfection.</p>
-        </div>
-        <div class="service-box">
-            <h3>Research & Summaries</h3>
-            <p>Detailed reports, policy briefs, bibliographies, and insights tailored to your needs.</p>
-        </div>
-        <div class="service-box">
-            <h3>Data Entry & Annotation</h3>
-            <p>Accurate, organized, and confidential handling of critical datasets for analysis or automation.</p>
-        </div>
-        <div class="service-box">
-            <h3>Revenue Generation</h3>
-            <p>Investor research, ROI calculations, outreach, and actionable financial strategy for businesses.</p>
-        </div>
-        <div class="service-box">
-            <h3>Project Management</h3>
-            <p>Organizing tasks, timelines, and deliverables to ensure smooth, effective project execution.</p>
-        </div>
-    </div>
-</section>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About The Black Copy</h2>
+        <p>
+            The Black Copy is a strategic partner for students, professionals, nonprofits, and political campaigns alike. 
+            We provide clear, actionable solutions in copywriting, research, data entry, business planning, and revenue generation. 
+            Our goal is simple: turn ideas into results efficiently, accurately, and creatively. Every project is handled with precision, 
+            confidentiality, and a focus on producing tangible impact.
+        </p>
+    </section>
 
-<!-- Behind the Scenes Section -->
-<section id="behind-scenes">
-    <h2>Behind the Scenes</h2>
-    <p>
-        The Black Copy is powered by Tawanna Irving, a skilled strategist and writer with extensive experience in business development, revenue generation, research, and copywriting. 
-        Academically pursuing a Bachelor of Science in Psychology, Tawanna combines analytical rigor with creativity to deliver high-quality solutions. 
-        Professionally, her experience ranges from managing executive operations and investor outreach to writing grants, business plans, and policy briefs. 
-        This unique combination of skills allows The Black Copy to deliver projects that are not just well-written, but strategically designed for impact.
-    </p>
-</section>
-    
-<!-- Portfolio -->
-<section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio">
-        <div class="portfolio-item">
-            <h3>Website & Content</h3>
-            <p>Examples of copywriting, blogging, and structured content for students, nonprofits, and startups.</p>
-        </div>
-        <div class="portfolio-item">
-            <h3>Business Plans</h3>
-            <p>One-page summaries, multi-page investor-ready plans, and strategic business documentation.</p>
-        </div>
-        <div class="portfolio-item">
-            <h3>Research Projects</h3>
-            <p>Policy briefs, bibliographies, and research summaries for students, campaigns, and educators.</p>
-        </div>
-    </div>
-</section>
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Services</h2>
+        <ul>
+            <li>Copywriting & Content Creation</li>
+            <li>SEO & Email Marketing</li>
+            <li>Grant Writing & Fundraising Materials</li>
+            <li>Data Entry & Annotation</li>
+            <li>Business Analytics & ROI Calculations</li>
+            <li>Research & Summaries</li>
+            <li>Project Management & Strategic Planning</li>
+            <li>Business Plan Creation</li>
+            <li>Investor/Revenue Generation Assistance</li>
+            <li>Budgeting & Financial Analysis</li>
+        </ul>
+    </section>
 
-<!-- Links Section -->
-<section id="links">
-    <h2>Connect With Me</h2>
-    <p>
-        Explore my work and request projects through the following platforms:
-    </p>
-    <ul>
-        <li><a href="https://www.fiverr.com/s/38dkvQ9" target="_blank">Fiverr</a></li>
-        <li><a href="https://medium.com/@tawannatirving" target="_blank">Medium</a></li>
-        <li><a href="https://linkedin.com/in/tawanna-t-irving" target="_blank">LinkedIn</a></li>
-    </ul>
-</section>
-    
-<!-- Contact -->
-<section id="contact">
-    <h2>Contact</h2>
-    <form class="contact-form" action="mailto:irvingtawa@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-    <p style="text-align:center; margin-top:1rem;">Email: irvingtawa@gmail.com</p>
-</section>
+    <!-- Behind the Scenes Section -->
+    <section id="behind-scenes">
+        <h2>Behind the Scenes</h2>
+        <p>
+            The Black Copy is powered by Tawanna Irving, a skilled strategist and writer with extensive experience in business development, revenue generation, research, and copywriting. 
+            Academically pursuing a Bachelor of Science in Psychology, Tawanna combines analytical rigor with creativity to deliver high-quality solutions. 
+            Professionally, her experience ranges from managing executive operations and investor outreach to writing grants, business plans, and policy briefs. 
+            This unique combination of skills allows The Black Copy to deliver projects that are not just well-written, but strategically designed for impact.
+        </p>
+    </section>
 
-<!-- Footer -->
-<footer>
-    &copy; 2025 The Black Copy | <a href="https://theblackcopy.netlify.app">theblackcopy.netlify.app</a>
-</footer>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>Project 1</h3>
+                <p>Example of business plan creation and strategy consulting.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project 2</h3>
+                <p>Research and content development for students and professionals.</p>
+            </div>
+            <div class="portfolio-item">
+                <h3>Project 3</h3>
+                <p>Grant writing and revenue generation documentation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Links Section -->
+    <section id="links">
+        <h2>Connect With Me</h2>
+        <p>Explore my work and request projects through the following platforms:</p>
+        <ul>
+            <li><a href="https://www.fiverr.com/s/38dkvQ9" target="_blank">Fiverr</a></li>
+            <li><a href="https://medium.com/@tawannatirving" target="_blank">Medium</a></li>
+            <li><a href="https://linkedin.com/in/tawanna-t-irving" target="_blank">LinkedIn</a></li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 The Black Copy. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
