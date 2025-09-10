@@ -22,20 +22,38 @@
     width: 100%;
     background-color: #000;
     display: flex;
-    justify-content: center;
-    padding: 1rem 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
     z-index: 1000;
-    border-bottom: 1px solid #B0000F;
+    border-bottom: 1px solid #80000A;
   }
-  nav a {
-    margin: 0 1.5rem;
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    color: #B0000F;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links li a {
     font-weight: 500;
     font-size: 1rem;
     text-transform: uppercase;
     transition: color 0.3s;
   }
-  nav a:hover {
+  .nav-links li a:hover {
     color: #fff;
+  }
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #B0000F;
   }
   header {
     display: flex;
@@ -72,8 +90,8 @@
     text-align: center;
   }
   section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.15rem;
+    line-height: 1.9;
     margin-bottom: 1.5rem;
   }
   .behind-scenes {
@@ -83,9 +101,9 @@
   }
   .behind-scenes div {
     background-color: #111;
-    padding: 1.5rem;
+    padding: 2rem;
     border-left: 5px solid #B0000F;
-    border-radius: 5px;
+    border-radius: 8px;
   }
   .links-section {
     display: flex;
@@ -100,7 +118,7 @@
     padding: 1rem 2rem;
     background-color: #111;
     border: 2px solid #B0000F;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: all 0.3s;
   }
   .links-section a:hover {
@@ -113,8 +131,8 @@
     gap: 1rem;
   }
   input, textarea {
-    padding: 0.75rem;
-    border-radius: 5px;
+    padding: 0.85rem;
+    border-radius: 6px;
     border: 1px solid #B0000F;
     background-color: #111;
     color: #eee;
@@ -122,12 +140,12 @@
     resize: vertical;
   }
   button {
-    padding: 0.75rem 1.5rem;
+    padding: 0.85rem 1.5rem;
     border: none;
     background-color: #B0000F;
     color: #fff;
     font-weight: 600;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s;
@@ -139,7 +157,7 @@
     padding: 2rem;
     text-align: center;
     background-color: #000;
-    border-top: 1px solid #B0000F;
+    border-top: 1px solid #80000A;
     font-size: 0.9rem;
   }
   footer a {
@@ -154,16 +172,45 @@
       flex: 1;
     }
   }
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      gap: 1.5rem;
+      border-top: 1px solid #80000A;
+      z-index: 999;
+      padding-bottom: 1rem;
+    }
+    .nav-links li a {
+      font-size: 1.2rem;
+      padding: 0.5rem 0;
+    }
+    .menu-toggle {
+      display: block;
+    }
+    .nav-links.active {
+      display: flex;
+    }
+  }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#about">About</a>
-  <a href="#behind-scenes">Behind the Scenes</a>
-  <a href="#links">Links</a>
-  <a href="#contact">Contact</a>
-  <a href="privacy.html">Privacy Policy</a>
+  <div class="logo">The Black Copy</div>
+  <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#behind-scenes">Behind the Scenes</a></li>
+    <li><a href="#links">Links</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <header>
@@ -210,8 +257,17 @@
 </section>
 
 <footer>
-  <p>&copy; 2025 The Black Copy | <a href="privacy.html">Privacy Policy</a></p>
+  <p>&copy; 2025 The Black Copy | Headquarters: Atlanta, GA 30349 | <a href="privacy.html">Privacy Policy</a></p>
 </footer>
+
+<script>
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>
