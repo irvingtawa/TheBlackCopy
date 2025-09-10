@@ -22,21 +22,23 @@
     width: 100%;
     background-color: #000;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
     z-index: 1000;
     border-bottom: 1px solid #80000A;
+    gap: 4rem;
   }
   .logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.75rem;
     color: #B0000F;
+    margin-right: auto;
   }
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 3rem; /* increased spacing to prevent text cutoff */
+    gap: 3rem;
     margin: 0;
     padding: 0;
   }
@@ -45,7 +47,6 @@
     font-size: 1rem;
     text-transform: uppercase;
     transition: color 0.3s;
-    white-space: nowrap; /* ensures text doesn't wrap */
   }
   .nav-links li a:hover {
     color: #fff;
