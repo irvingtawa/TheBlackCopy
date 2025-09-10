@@ -36,16 +36,16 @@
   .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 3rem; /* increased spacing to prevent text cutoff */
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
   }
   .nav-links li a {
     font-weight: 500;
     font-size: 1rem;
     text-transform: uppercase;
     transition: color 0.3s;
+    white-space: nowrap; /* ensures text doesn't wrap */
   }
   .nav-links li a:hover {
     color: #fff;
