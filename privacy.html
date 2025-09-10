@@ -7,42 +7,42 @@
     <link rel="stylesheet" href="styles.css"> <!-- Link your existing CSS -->
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif; /* Match index.html font */
             background-color: #0a0a0a;
             color: #f2f2f2;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #0a0a0a;
-            padding: 15px 0;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
+            background-color: #0a0a0a;
             z-index: 1000;
-            border-bottom: 1px solid #e60000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
         nav {
             display: flex;
             justify-content: center;
+            padding: 20px 0;
         }
         nav a {
-            color: #e60000;
+            color: #b30000; /* darker, deeper red */
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
+            font-weight: 600;
+            font-size: 1.1em;
             transition: color 0.3s ease;
         }
         nav a:hover {
-            color: #ff1a1a;
+            color: #e60000; /* hover red */
         }
         main {
             max-width: 900px;
-            margin: 100px auto 60px auto; /* margin-top accounts for fixed navbar */
+            margin: 100px auto 60px auto; /* margin-top accounts for fixed nav */
             padding: 0 20px;
         }
         section h1, section h2 {
-            color: #e60000;
+            color: #b30000;
         }
         section p {
             line-height: 1.7;
@@ -53,19 +53,20 @@
             text-align: center;
             padding: 20px 0;
             margin-top: 60px;
-            border-top: 1px solid #e60000;
+            border-top: 1px solid #b30000;
         }
         footer a {
-            color: #e60000;
+            color: #b30000;
             text-decoration: none;
             margin-left: 10px;
         }
         footer a:hover {
-            color: #ff1a1a;
+            color: #e60000;
         }
         @media screen and (max-width: 600px) {
             nav {
                 flex-direction: column;
+                gap: 15px;
             }
         }
     </style>
@@ -104,13 +105,12 @@
             <p>You may request access to the information we hold about you, request corrections, or request deletion of your data. Contact us at the email below for any inquiries regarding your personal data.</p>
             
             <h2>Contact Information</h2>
-            <p>If you have questions or concerns about this Privacy Policy or our practices, please email us at <a href="mailto:irvingtawa@gmail.com" style="color:#e60000;">irvingtawa@gmail.com</a>.</p>
+            <p>If you have questions or concerns about this Privacy Policy or our practices, please email us at <a href="mailto:irvingtawa@gmail.com" style="color:#b30000;">irvingtawa@gmail.com</a>.</p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 The Black Copy. All rights reserved.</p>
-        <a href="index.html">Home</a>
     </footer>
 </body>
 </html>
