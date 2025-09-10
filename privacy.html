@@ -19,17 +19,18 @@
             position: fixed;
             width: 100%;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            border-bottom: 1px solid #e60000;
         }
         nav {
             display: flex;
             justify-content: center;
-            gap: 30px;
         }
         nav a {
             color: #e60000;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1rem;
             transition: color 0.3s ease;
         }
         nav a:hover {
@@ -37,7 +38,7 @@
         }
         main {
             max-width: 900px;
-            margin: 100px auto 60px auto; /* Top margin adjusted for fixed header */
+            margin: 100px auto 60px auto; /* margin-top accounts for fixed navbar */
             padding: 0 20px;
         }
         section h1, section h2 {
@@ -51,6 +52,7 @@
             background-color: #0a0a0a;
             text-align: center;
             padding: 20px 0;
+            margin-top: 60px;
             border-top: 1px solid #e60000;
         }
         footer a {
@@ -64,7 +66,6 @@
         @media screen and (max-width: 600px) {
             nav {
                 flex-direction: column;
-                gap: 15px;
             }
         }
     </style>
