@@ -1,116 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - The Black Copy</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link your existing CSS -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif; /* Match index.html font */
-            background-color: #0a0a0a;
-            color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #0a0a0a;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-        nav a {
-            color: #b30000; /* darker, deeper red */
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #e60000; /* hover red */
-        }
-        main {
-            max-width: 900px;
-            margin: 100px auto 60px auto; /* margin-top accounts for fixed nav */
-            padding: 0 20px;
-        }
-        section h1, section h2 {
-            color: #b30000;
-        }
-        section p {
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        footer {
-            background-color: #0a0a0a;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 60px;
-            border-top: 1px solid #b30000;
-        }
-        footer a {
-            color: #b30000;
-            text-decoration: none;
-            margin-left: 10px;
-        }
-        footer a:hover {
-            color: #e60000;
-        }
-        @media screen and (max-width: 600px) {
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - The Black Copy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #eee;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #B0000F;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #fff;
+  }
+  nav {
+    position: fixed;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    border-bottom: 1px solid #80000A;
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    color: #B0000F;
+    margin-right: auto;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links li a {
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links li a:hover {
+    color: #fff;
+  }
+  .menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #B0000F;
+  }
+  main {
+    max-width: 900px;
+    margin: 100px auto 60px auto; /* account for fixed nav */
+    padding: 0 1rem;
+  }
+  h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #B0000F;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+  footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #000;
+    border-top: 1px solid #80000A;
+    font-size: 0.9rem;
+  }
+  footer a {
+    color: #B0000F;
+    text-decoration: none;
+  }
+  footer a:hover {
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      gap: 1.5rem;
+      border-top: 1px solid #80000A;
+      z-index: 999;
+      padding-bottom: 1rem;
+    }
+    .nav-links.active {
+      display: flex;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-        </nav>
-    </header>
 
-    <main>
-        <section>
-            <h1>Privacy Policy</h1>
-            <p>At The Black Copy, we value your privacy and are committed to protecting the information you provide. This Privacy Policy explains how we collect, use, and safeguard your data.</p>
-            
-            <h2>Information We Collect</h2>
-            <p>We only collect information that you voluntarily provide through our forms, inquiries, or communications. This may include your name, email address, phone number, and any project-specific details you provide.</p>
-            
-            <h2>How We Use Your Information</h2>
-            <p>Your information is used solely to respond to inquiries, provide services, and communicate about your requested projects. We do not sell, rent, or share your information with third parties for marketing purposes.</p>
-            
-            <h2>Data Security</h2>
-            <p>We implement reasonable technical and organizational measures to protect your data from unauthorized access, disclosure, alteration, or destruction. However, no system is completely secure, and we cannot guarantee absolute security.</p>
-            
-            <h2>Cookies & Tracking</h2>
-            <p>Our website does not actively track personal information using cookies or similar technologies, unless explicitly stated. Any third-party tools integrated for analytics are subject to their own privacy policies.</p>
-            
-            <h2>Third-Party Links</h2>
-            <p>Our website may contain links to external websites, including platforms like Fiverr, Medium, and LinkedIn. We are not responsible for the privacy practices or content of these external sites.</p>
-            
-            <h2>Children’s Privacy</h2>
-            <p>The Black Copy does not knowingly collect information from individuals under the age of 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
-            
-            <h2>Your Rights</h2>
-            <p>You may request access to the information we hold about you, request corrections, or request deletion of your data. Contact us at the email below for any inquiries regarding your personal data.</p>
-            
-            <h2>Contact Information</h2>
-            <p>If you have questions or concerns about this Privacy Policy or our practices, please email us at <a href="mailto:irvingtawa@gmail.com" style="color:#b30000;">irvingtawa@gmail.com</a>.</p>
-        </section>
-    </main>
+<nav>
+  <div class="logo">The Black Copy</div>
+  <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+  </ul>
+</nav>
 
-    <footer>
-        <p>&copy; 2025 The Black Copy. All rights reserved.</p>
-    </footer>
+<main>
+  <h1>Privacy Policy</h1>
+  <p>At The Black Copy, we value your privacy and are committed to protecting the information you provide. This Privacy Policy explains how we collect, use, and safeguard your data, in accordance with applicable laws and best practices.</p>
+
+  <h2>Information We Collect</h2>
+  <p>We collect information that you voluntarily provide through our contact forms, communications, or project inquiries. This may include your name, email address, phone number, and project-specific details.</p>
+
+  <h2>How We Use Your Information</h2>
+  <p>Your information is used solely to respond to inquiries, provide services, and manage projects effectively. We do not sell, rent, or share your information with third parties for marketing purposes.</p>
+
+  <h2>Data Security</h2>
+  <p>We implement reasonable technical and organizational measures to protect your data against unauthorized access, disclosure, alteration, or destruction. While we strive to maintain secure systems, no online data transmission or storage method can be guaranteed to be 100% secure.</p>
+
+  <h2>Cookies & Tracking</h2>
+  <p>Our website does not use cookies to collect personal information. Any third-party services, analytics, or tools integrated into our site are subject to their own privacy policies.</p>
+
+  <h2>Third-Party Links</h2>
+  <p>Our site may contain links to external websites such as Fiverr, Medium, LinkedIn, and portfolio sites. We are not responsible for the privacy practices of these third-party sites.</p>
+
+  <h2>Children’s Privacy</h2>
+  <p>We do not knowingly collect information from individuals under the age of 13. If you believe we have inadvertently collected such information, please contact us immediately to request deletion.</p>
+
+  <h2>Your Rights</h2>
+  <p>You have the right to access, correct, or request deletion of your personal data. To exercise these rights, contact us at <a href="mailto:irvingtawa@gmail.com">irvingtawa@gmail.com</a>.</p>
+
+  <h2>Changes to This Privacy Policy</h2>
+  <p>We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or business operations. The latest version will always be posted on this page.</p>
+
+  <h2>Contact Information</h2>
+  <p>If you have any questions or concerns about this Privacy Policy or our practices, please email us at <a href="mailto:irvingtawa@gmail.com">irvingtawa@gmail.com</a>.</p>
+</main>
+
+<footer>
+  <p>&copy; 2025 The Black Copy | Headquarters: Atlanta, GA 30349 | <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+</script>
+
 </body>
 </html>
